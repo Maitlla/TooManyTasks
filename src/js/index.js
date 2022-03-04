@@ -34,11 +34,12 @@ function data2HTML(taskName, completed, description) {
         <tr>
             <td>
             <p>
-            <input type="submit" value="Trabajo" name="select">
-            <input type="submit" value="Estudios" name="select">
-            <input type="submit" value="Eventos" name="select">
-            <input type="submit" value="Hogar" name="select">
-            <input type="submit" value="Otros" name="select">
+            <button class="seleccionar" id="">Trabajo </button>
+            <button class="seleccionar" id="">Estudios </button>
+            <button class="seleccionar" id="">Eventos </button>
+            <button class="seleccionar" id="">Healthy </button>
+            <button class="seleccionar" id="">Hogar </button>
+            <button class="seleccionar" id="">Otros </button>
             </p>
             </td>
         </tr> 
@@ -73,6 +74,28 @@ function insertTasksHTML() {
     const ul = document.querySelector("#tasksList");
     ul.innerHTML = taskListHTML();
 }
+
+
+
+/*
+// Defino la clase Tarea para poder crear Objetos de esta clase
+class Tarea {
+    taskName;
+    completed;
+    description;
+    select;
+
+    // Creo un método constructor para inicializar las propiedades
+    constructor(taskName, completed, description) {
+        this.taskName = taskName;
+        this.completed = completed;
+        this.description = description;
+        this.select =  queTipoTarea;     new Array(0); // Inicializo el Array que tienen como elementos los tipos de tarea
+        
+    }    */
+
+
+
 
 window.addEventListener('load', insertTasksHTML)
 
