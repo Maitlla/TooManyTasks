@@ -1,3 +1,4 @@
+
 // moked data
 const tasks = [
     {
@@ -43,18 +44,6 @@ function insertTasksHTML () {
 }
 
 window.addEventListener('load',insertTasksHTML)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

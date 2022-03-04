@@ -5,47 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./styles/index.css"> -->
-    <!-- <script src="./js/index.js"></script> -->
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/index.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <h1>Lista de tareas</h1>
+        <h1>Too Many Tasks</h1>
+        <div class="parteArriba"></div>
     </header>
     <main>
-
-        <form action="">
-            <fieldset>
-                <ul>
-                    <label for="td">Tipo de tarea</label>
-                    <br>
-                    <select id="td">
-                        <option value="TA">Tarea1</option>
-                        <option value="TB">Tarea2</option>
-                        <option value="TC">Tarea3</option>
-                        <option value="TD">Tarea3</option>
-                    </select>
-                </ul>
-                <ul>
-                    <label for="txtDescripcion">Descripción:</label>
-                    <br>
-                    <textarea id="txtDescripcion"></textarea>
-                </ul>
-
-                <ul id="tasksList">
-                    <!-- Elementos dinámicos -->
-                    <p id="placeHolder">Añade tu primera tarea...</p>
-                </ul>
-                <ul>
-                    <input type="text" name="newTask" id="">
-                    <input type="submit" value="+">
-                </ul>
-            </fieldset>
-        </form>
+        <div class="eldiv"> 
+            <div class="parte1">
+                <form action="">
+                    <fieldset>
+                        <ul>
+                            <p class="negrita">AÑADIR TAREA</p>
+                        </ul>
+                        <ul class="negrita">
+                            <input type="text" id="" name="newTask" >
+                            <input type="submit" value="+">
+                            <input type="submit" value="Añadir" name="añadir">
+                        </ul>
+                        <br />
+                    </fieldset>
+                    <br />
+                    <h2>Lista de tareas</h2>
+                  
+                        <ul class="negrita linea" id="tasksList"> 
+                            <!-- Elementos dinámicos -->
+                            <p id="placeHolder">Añade tu primera tarea...</p>
+                        </ul>
+                </form>
+            </div>
+            <div class="parte2 fondoD">
+               
+            </div>
+        </div>
     </main>
-    <script src="./js/index.js"></script>
+    <!-- <script src="./js/index.js"></script> -->
 </body>
 
 </html>
