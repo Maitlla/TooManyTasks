@@ -23,6 +23,26 @@ h1 {
 
 h2 {
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.elNombre {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+   
+    background: linear-gradient(to right,  transparent, rgb(224, 237, 255), rgb(224, 237, 255), transparent);
+}
+
+.elCheck {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.negrita {
+    font-weight: bold;
+    list-style: none; /* para que no se vean los marcadores de la lista */
 }
 
 .eldiv {
@@ -55,15 +75,36 @@ h2 {
     background-color: white;
 }
 
-.negrita {
-    font-weight: bold;
-}
-
 fieldset {
     background-color: #a5a6b1;
     border: solid #a5a6b1;
     text-align: center;
     margin-right: 0%;
+}
+
+.campos {
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 5px;
+    padding: 0.6% 1% 0.6% 1%;
+}
+
+.seleccionar {
+    border-radius: 4px;
+    border: solid black 1.6px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    font-size: 0.85em;
+    margin-top: 5px;
+    padding: 0.6% 1% 0.6% 1%;
+}
+
+select:hover{
+    color: black;
 }
 
 .linea {
@@ -73,27 +114,41 @@ fieldset {
     border-right: none;
 }
 
-.seleccionar {
-    border-radius: 6px;
-    background-color: white;
+.haciaDerecha {
+    padding-left: 180px;
+}
+
+.espacio {
+    margin-top: 15px;
+}
+
+.fuente {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.cursiva {
+    font-style: italic;
+    font-size: 1.2em;
     color: #a5a6b1;
-    cursor: pointer;
-    font-size: 0.9em;
-    margin-top: 5px;
-    padding: 1% 1.5% 1% 1.5%;
+
 }
 
-select:hover{
-    color: black;
-}
+/* text-decoration: underline 1px;   */
 
-.campos {
-    border-radius: 6px;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    font-size: 0.8em;
-    margin-top: 5px;
-    padding: 1% 1.5% 1% 1.5%;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

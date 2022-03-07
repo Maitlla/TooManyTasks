@@ -41,6 +41,7 @@ function taskListHTML () {
 function insertTasksHTML () {
     const ul = document.querySelector("#tasksList");
     ul.innerHTML = taskListHTML();
+    
 }
 
 window.addEventListener('load',insertTasksHTML)

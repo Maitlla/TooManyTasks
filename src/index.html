@@ -21,28 +21,27 @@
                 <form action="">
                     <fieldset>
                         <ul>
-                            <p class="negrita">AÑADIR TAREA</p>
+                            <p class="negrita fuente">Añadir Tarea</p>
                         </ul>
                         <ul class="negrita">
-                            <input type="text" class="campos" id="" name="newTask" >
-                            <select class="seleccionar" id="" name="select">
-                                <option value="">Select </option>
-                                <option value="">Trabajo </option>
-                                <option value="">Estudios </option>
-                                <option value="">Eventos </option>
-                                <option value="">Healthy </option>
-                                <option value="">Hogar </option>
-                                <option value="">Otros </option>
+                            <input type="text" class="campos fuente" name="taskName" id="taskName" >
+                            <select class="seleccionar fuente" name="tipo" id="tipo">
+                                <option value="">Seleccionar</option>
+                                <option value="Trabajo">Trabajo </option>
+                                <option value="Estudios">Estudios</option>
+                                <option value="Eventos">Eventos</option>
+                                <option value="Healthy">Healthy</option>
+                                <option value="Hogar">Hogar</option>
+                                <option value="Otros">Otros</option>
                              </select>
-                            <input type="submit" value="+">
-                            <input type="submit" value="Añadir" name="añadir">
+                            <input class="campos fuente" type="button" value="Añadir" name="añadir" id="botonAnadir">
                         </ul>
                         <br />
                     </fieldset>
                     <br />
-                    <h2>Lista de tareas</h2>
+                    <h2 class="fuente">Lista de tareas</h2>
                   
-                        <ul class="negrita linea" id="tasksList"> 
+                        <ul class="negrita fuente" id="tasksList"> 
                             <!-- Elementos dinámicos -->
                             <p id="placeHolder">Añade tu primera tarea...</p>
                         </ul>
