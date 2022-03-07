@@ -34,6 +34,9 @@ function data2HTML(taskName, completed, description, tipo) {
         </div>
     </li>
     `;
+        
+    }
+
     return resultadoHtml
 }
 
@@ -124,20 +127,25 @@ class Tarea {
     taskName;
     completed;
     description;
-    select;
+    tipo;
 
     // Creo un método constructor para inicializar las propiedades
-    constructor(taskName, completed, description) {
+    constructor(taskName, completed, description, tipo) {
         this.taskName = taskName;
         this.completed = completed;
         this.description = description;
-        this.select =  queTipoTarea;     new Array(0); // Inicializo el Array que tienen como elementos los tipos de tarea
+        this.tipo = tipo;     
         
-    }    */
+    }    
 
+    function Tareas(taskName, completed, description, tipo) {
+        this.taskName = taskName;
+        this.completed = completed;
+        this.description = description;
+        this.tipo = tipo;
+      }
 
-
-
+*/
 
 
 

@@ -31,7 +31,6 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     font-weight: bold;
-   
     background: linear-gradient(to right,  transparent, rgb(224, 237, 255), rgb(224, 237, 255), transparent);
 }
 
@@ -133,7 +132,21 @@ select:hover{
 
 }
 
-/* text-decoration: underline 1px;   */
+.cambioColor { /* para cambiar la franja azul del nombre de la tarea  */
+    background-color: #faeeb7;
+    color: #a5a6b1;
+    text-decoration: line-through;
+}
+
+/*
+.tachado {
+    text-decoration: line-through;
+}
+
+ text-decoration: underline 1px;   
+ */
+
+
 
 
 
