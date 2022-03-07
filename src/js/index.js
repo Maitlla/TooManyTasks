@@ -35,10 +35,11 @@ function data2HTML(taskName, completed, description, tipo) {
     </li>
     `;
         
-    }
-
     return resultadoHtml
-}
+ }
+
+ 
+
 
 function taskListHTML() {
     let HTMLtext = "";
@@ -70,9 +71,8 @@ function capturarEventoClickDelBotonAnadir() {
     });
 }
 
-
 function capturarEventosDeLasTareasMostradas() {
-    // Caputrar eventos de los checkbox
+    // Capturar eventos de los checkbox
     const checks = document.querySelectorAll('input[type=checkbox]');
     checks.forEach(check => {
         check.addEventListener('change', function (event) {
@@ -86,7 +86,7 @@ function capturarEventosDeLasTareasMostradas() {
     // Capturar eventos de los textarea
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach(textarea => {
-        // Hay que tener en cuenta que el evento "change" del textarea se lanza cuando sales del textarea
+        // Tener en cuenta que el evento "change" del textarea se lanza cuando sales del textarea
         textarea.addEventListener('change', function (event) {
             const taskName = textarea.parentElement.parentElement.querySelector("input[type=hidden]").value;
             const descripcionValue = textarea.value;
@@ -118,6 +118,7 @@ function onLoad() {
 
 
 window.addEventListener('load', onLoad);
+//window.addEventListener('load',insertTasksHTML)
 
 
 
