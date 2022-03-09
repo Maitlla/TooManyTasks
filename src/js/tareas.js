@@ -1,8 +1,8 @@
 
 const taskListHTMLSelector = "#tasksList";
 const addTaskButtonSelector = "#addTaskButton";
-const tasksListSelector = "#tasksList";
-const tasksStorageKey = "tasks"
+const addTaskInputSelector = "#taskInput";
+const completedCSSClass = "completed";
 
 const input = document.querySelector("#taskInput");
 const button = document.querySelector("#addTasksButton");
@@ -13,31 +13,32 @@ function getTasks() {
     return JSON.parse(stringData);
 }
 
-function saveTasks(tasksArray) {
-    const stringData = JSON.stringify(tasksArray)
-    return localStorage.setItem(tasksStorageKey, stringData);
-}
-
 function addTasks(taskObject) {
     const tasks = getTasks() || [];
     tasks.push(taskObject);
     saveTasks(tasks);
 }
 
-function taskAddButtonClickHandler(event) {
+function saveTasks(newTasksArray) {
+    const stringData = JSON.stringify(newTasksArray)
+    localStorage.setItem(tasksStorageKey, stringData);
+    updateTasksHTML(taskListHTMLSelector, newTasksArray)
+}
+
+function taskAddButtonClickHandler (event) {
     //console.log(event)
+    const input = document.querySelector(addTaskInputSelector);
     event.preventDefault()
     const newTask = {
         taskName: input.value,
         completed: false,
     };
-    addTasks(newTask);
-    replaceTasks(taskListHTMLSelector, getTasks());
+    addTask(newTask);
+    input.value = "";
+    updateTasksHTML(taskListHTMLSelector,getTasks());
 }
 
-replaceTasks(taskListHTMLSelector, getTasks());
 
-button.addEventListener("click", taskAddButtonClickHandler);
 
 
 /**
@@ -48,38 +49,48 @@ button.addEventListener("click", taskAddButtonClickHandler);
  * @returns {string} - <li> HTML resultante
  */
 
-function task2HTMLElement(task) {
-
+function task2HTMLElement (taskIndex, taskObject) {
     // Creo los elementos HTML
     const listHTMLItem = document.createElement("li");
     const pHTMLItem = document.createElement("p");
     const inputCheckboxHTMLItem = document.createElement("input");
-
     // Les proporciono valores 
     inputCheckboxHTMLItem.type = "checkbox";
-    inputCheckboxHTMLItem.checked = task.completed;
-    pHTMLItem.innerHTML = task.taskName
-
+    inputCheckboxHTMLItem.checked = taskObject.completed;
+    pHTMLItem.innerHTML = taskObject.taskName
     // Los anido
-    listHTMLItem.appendChild(pHTMLItem);
-    listHTMLItem.appendChild(inputCheckboxHTMLItem);
-
+    listHTMLItem.append(pHTMLItem, inputCheckboxHTMLItem);
+    // Aplico estilos si está completada
+    if (taskObject.completed) {
+        listHTMLItem.classList.add(completedCSSClass);
+    } else {
+        listHTMLItem.classList.remove(completedCSSClass);
+    }
     // Añado el manejador de eventos
     inputCheckboxHTMLItem.addEventListener(
         "click",
-        () => { console.log(listHTMLItem) }
-    )
-
+        (event) => {
+            const tasks = getTasks();
+            tasks[taskIndex].completed = event.target.checked;
+            saveTasks(tasks);
+        }
+    );
     return listHTMLItem
 }
 
-function replaceTasks(selector, tasksArray) {
-    const listHTMLElement = document.querySelector(selector);
-    listHTMLElement.innerHTML = ""
-    for (let item of tasksArray) {
-        listHTMLElement.appendChild(task2HTMLElement(item))
+function updateTasksHTML (CSSselector, tasksArray) {
+    const listHTMLElement = document.querySelector(CSSselector);
+    listHTMLElement.innerText = ""
+    if (tasksArray.length > 0) {
+        for ( let index in tasksArray ) {
+            listHTMLElement.appendChild(task2HTMLElement(index, tasksArray[index]))
+        }
+    } else {
+        listHTMLElement.innerText = "Add your first task..."
     }
+
 }
+
 
 
 
